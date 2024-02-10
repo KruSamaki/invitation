@@ -42,23 +42,23 @@
     flex-direction: column;
     margin: auto;
 }
-.container .content{
+.container #content{
     width: 600px;
     height: 1169px;
     display: block;
     margin: auto;
     margin-bottom: 10px;
 }
-.container .content img{
+.container #content img{
     width: 100%;
 }
 @media (max-width: 600px) {
-    .container .content {
+    .container #content {
       width: 100%;
       height: auto;
     }
   }
-.container .content.animate-scroll {
+.container #content.animate-scroll {
     animation-name: scale-in;
     animation-duration: 1s;
     animation-fill-mode:calc(25deg);

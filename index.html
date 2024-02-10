@@ -12,12 +12,12 @@
 <body>
     <div class="menu_tab">
         <ul>
-            <li><a href="#">
+            <li><a href="#content1">
                     <img src="img/application.png" alt="">
                     <p class="title">Application</p></img>
                 </a>
             </li>
-            <li><a href="#">
+            <li><a href="#content2">
                     <img src="img/location.png" alt="">
                     <p class="title">location</p></img>
                 </a>
@@ -41,7 +41,7 @@
     </div>
     <!-- mp3 -->
     <audio id="backgroundMusic" autoplay loop>
-        <source src="mp3/mp3.mp3" type="audio/mp3">
+        <source src="mp3/music.mp3" type="audio/mpeg">
     </audio>
     
     <div id="muteButton" onclick="toggleMute()">
@@ -49,10 +49,10 @@
     </div>
     <!-- Contents -->
     <div class="container">
-        <div class="content">
+        <div class="content" id="content1">
             <img src="img/4.jpg" alt="">
         </div>
-        <div class="content">
+        <div class="content" id="content2">
             <img src="img/4.jpg" alt="">
         </div>
     </div>
