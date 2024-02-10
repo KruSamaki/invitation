@@ -1,0 +1,100 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.menu_tab{
+    display:flex;
+    width: 100%;
+    position: fixed;
+    background-color:darkcyan;
+    text-align: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    bottom: 0;
+}
+.menu_tab ul{
+    display: flex;
+    justify-content: center;
+}
+.menu_tab ul li{
+    list-style: none;
+    flex-direction: column;
+    margin: 5px 10px;
+    color: white;
+}
+.menu_tab ul li a:hover{
+    background-color: rgba(0, 139, 139, 0.648);
+}
+.menu_tab ul li a{
+    text-decoration: none;
+    color: white;
+}
+.menu_tab ul li img{
+    width: 35px;
+}
+/* container */
+.container{
+    width: 100%;
+    height: 100%;
+    background-color: darkmagenta;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+.container .content{
+    width: 600px;
+    height: 1169px;
+    display: block;
+    margin: auto;
+    margin-bottom: 10px;
+}
+.container .content img{
+    width: 100%;
+}
+@media (max-width: 600px) {
+    .container .content {
+      width: 100%;
+      height: auto;
+    }
+  }
+.container .content.animate-scroll {
+    animation-name: scale-in;
+    animation-duration: 1s;
+    animation-fill-mode:calc(25deg);
+  }
+  
+  @keyframes scale-in {
+    0% {
+      width: 0%;
+    }
+    50% {
+      width: 50%;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+  /* Float button */
+  #muteButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#muteIcon {
+    color: white;
+    font-size: 24px;
+}
+
+#muteButton.muted #muteIcon {
+    color: red;
+}
