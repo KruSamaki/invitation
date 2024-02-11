@@ -42,39 +42,26 @@
     flex-direction: column;
     margin: auto;
 }
-.container #content{
+.container .content{
     width: 600px;
     height: 1169px;
     display: block;
     margin: auto;
     margin-bottom: 10px;
+    background-image: url("img/whitening\ back.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
 }
-.container #content img{
+.container .content img{
     width: 100%;
 }
 @media (max-width: 600px) {
-    .container #content {
+    .container .content {
       width: 100%;
       height: auto;
     }
   }
-.container #content.animate-scroll {
-    animation-name: scale-in;
-    animation-duration: 1s;
-    animation-fill-mode:calc(25deg);
-  }
-  
-  @keyframes scale-in {
-    0% {
-      width: 0%;
-    }
-    50% {
-      width: 50%;
-    }
-    100% {
-      width: 100%;
-    }
-  }
+
   /* Float button */
   #muteButton {
     position: fixed;
