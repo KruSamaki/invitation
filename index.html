@@ -1,62 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-    <link rel="stylesheet" href="style.css">
-    <title>Dy💗Roth</title>
+    <title>Khmer-Words</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <style>
+        body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #e5e7eb;
+}
+
+header {
+    width: 100%;
+    height: 65px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-icon {
+    width: 40%;
+    margin-left: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.logo-icon img {
+    height: 65px;
+    margin-right: 25px;
+}
+
+.hamburger {
+    margin-right: 25px;
+}
+
+.hamburger input[type="checkbox"] {
+    display: none;
+}
+
+.hamburger .menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.hamburger .menu-items {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.hamburger .menu-items li {
+    padding: 1rem;
+}
+
+.hamburger .menu-items li a {
+    color: #333;
+    text-decoration: none;
+}
+
+.hamburger input[type="checkbox"]:checked ~ .menu-items {
+    right: 0;
+}
+
+.body {
+    width: 80%;
+    background-color: #7c7f86;
+    height: 100vh;
+    margin: auto;
+}
+
+@media (max-width: 768px) {
+    .logo-icon {
+        width: auto;
+    }
+
+    .body {
+        width: 100%;
+    }
+}
+    </style>
 </head>
-
 <body>
-    <div class="menu_tab">
-        <ul>
-            <li><a href="#content1">
-                    <img src="img/application.png" alt="">
-                    <p class="title">Application</p></img>
-                </a>
-            </li>
-            <li><a href="#content2">
-                    <img src="img/location.png" alt="">
-                    <p class="title">location</p></img>
-                </a>
-            </li>
-            <li><a href="#">
-                    <img src="img/photoicon.png" alt="">
-                    <p class="title">Photos Album</p></img>
-                </a>
-            </li>
-            <li><a href="#">
-                    <img src="img/thanksicon.png" alt="">
-                    <p class="title">Thanks</p></img>
-                </a>
-            </li>
-            <li><a href="#">
-                    <img src="img/message love icon.png" alt="">
-                    <p class="title">Message</p></img>
-                </a>
-            </li>
-        </ul>
-    </div>
-    <!-- mp3 -->
-    <audio id="backgroundMusic" autoplay loop>
-        <source src="mp3/music.mp3" type="audio/mpeg">
-    </audio>
-    
-    <div id="muteButton" onclick="toggleMute()">
-        <i id="muteIcon" class="fas fa-volume-up"></i>
-    </div>
-    <!-- Contents -->
-    <div class="container">
-        <div class="content" id="content1">
-            <img src="img/4.jpg" alt="">
-        </div>
-        <div class="content" id="content2">
-            <img src="img/Picture1.png" alt="">
-        </div>
-    </div>
-</body>
-<script src="script.js"></script>
+    <header>
+        <nav>
+            <div class="logo-icon">
+                <div class="logo">
+                    <img src="img/apsara.jpg" alt="">
+                </div>
+                <div class="logo-title">
+                    ពាក្យខ្មែរ
+                </div>
+            </div>
+            <div class="hamburger">
+                <input type="checkbox" name="" id="menu-toggle">
+                <label for="menu-toggle" class="menu-btn"><i class="fas fa-bars"></i></label>
+                <ul class="menu-items">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
 
+    <div class="body">
+        <div class="quiz-container">
+            <div class="quiz-header">
+                <h2 id="question"></h2>
+                <div class="timer">
+                    <span id="timer-display">30</span>
+                </div>
+            </div>
+            <div class="answer-buttons">
+                <button id="answer1" class="answer-btn"></button>
+                <button id="answer2" class="answer-btn"></button>
+                <button id="answer3" class="answer-btn"></button>
+                <button id="answer4" class="answer-btn"></button>
+            </div>
+            <div class="score-container">
+                <span id="score">0</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener("click", function(event) {
+    var menuToggle = document.getElementById("menu-toggle");
+    var menuItems = document.querySelector(".menu-items");
+
+    if (!menuItems.contains(event.target) && event.target !== menuToggle && event.target.parentNode !== menuToggle) {
+        menuToggle.checked = false;
+    }
+});
+    </script>
+</body>
 </html>
